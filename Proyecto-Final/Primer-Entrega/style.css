@@ -1,0 +1,23 @@
+*{
+    margin:0 ;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: #f8ceec;
+    background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+    font-style: normal;
+    padding: 4.375em 0px 0px 0px;
+}
+
+.seccion{
+    text-align: center;
+}
+
+.titulo{
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-transform: uppercase;
+
+}
