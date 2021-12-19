@@ -12,12 +12,47 @@ body{
     padding: 4.375em 0px 0px 0px;
 }
 
-.seccion{
-    text-align: center;
-}
-
-.titulo{
-    font-family: 'IBM Plex Sans', sans-serif;
-    text-transform: uppercase;
-
-}
+header {
+    background-color: #560090;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px black; }
+    header .nav-propia .container-fluid .menu li {
+      list-style-type: none; }
+      header .nav-propia .container-fluid .menu li .nav-link {
+        position: relative;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: white;
+        padding: 10px; }
+      header .nav-propia .container-fluid .menu li .nav-link::after {
+        content: "";
+        background-color: white;
+        position: absolute;
+        left: 0;
+        top: calc(100% - 10px);
+        width: 100%;
+        height: 4px;
+        border-radius: 3px;
+        opacity: 0;
+        transition: opacity 0.3s; }
+      header .nav-propia .container-fluid .menu li .nav-link.selected::after {
+        opacity: 0.8; }
+      header .nav-propia .container-fluid .menu li .nav-link:hover::after {
+        opacity: 0.8; }
+      header .nav-propia .container-fluid .menu li .nav-link:link {
+        text-decoration: none; }
+      header .nav-propia .container-fluid .menu li .nav-link:visited {
+        text-decoration: none; }
+      header .nav-propia .container-fluid .menu li .nav-link:active {
+        text-decoration: none; }
+  
+  @media only screen and (max-width: 990px) {
+    header .nav-propia .container-fluid .menu li .nav-link::after {
+      background-color: transparent; }
+    header .nav-propia .container-fluid .menu li .nav-link:hover {
+      filter: brightness(0.5); } }
