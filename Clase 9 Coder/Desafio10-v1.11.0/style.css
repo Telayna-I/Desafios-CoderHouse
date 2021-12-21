@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.botones{
+    margin-top: 100px;
+    margin-left: 550px;
+    margin-bottom: 2em;
+}
+.contenedor_noticia{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    padding: 3em;
+
+}
+
+.contenedor_noticia h1{
+    padding: 0.5em;
+    background-color: silver;
+    border-radius: 10px;
+    color: rgb(22, 20, 20);
+    font-weight: bold;
+}
+.contenedor_noticia p{
+    background-color: silver;
+    border-radius: 10px;
+    padding:2em;
+    color: black;
+    text-align: justify;
+}
