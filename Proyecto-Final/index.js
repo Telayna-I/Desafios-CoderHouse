@@ -93,10 +93,10 @@ function pedidos(){
     pedido1.printOrder();
 }
 
-const desicion = parseInt(prompt("Que operacion desea realizar?:\n 1) Pesupuesto. \n 2) Encargue."))
-if(desicion == 1){
-    presupuesto();
-}else{
-    pedidos();
+// const desicion = parseInt(prompt("Que operacion desea realizar?:\n 1) Pesupuesto. \n 2) Encargue."))
+// if(desicion == 1){
+//     presupuesto();
+// }else{
+//     pedidos();
 
-}
+// }

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/450a6353b6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>La Repostera</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light nav-propia">
+            <div class="container-fluid">
+                <a class="navbar-brand text-dark ms-4" href="index.html">
+                    <img src="magdalena.png" class="texto-logo" width="65" alt="logo-laRepostera">
+                    <div class="texto-logo text-dark">
+                        La Repostera
+                    </div> 
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="menu" class="navbar-nav ms-auto mb-2 mb-lg-0 menu">
+                        <li  id="se_borra1">
+                            <a id="section1" class="nav-link text-dark " href="#">inicio</a>
+                        </li>
+                        <li id="se_borra2">
+                            <a id="section2" class="nav-link text-dark" href="#">Presupuesto</a>
+                        </li>
+                        <li id="se_borra3">
+                            <a id="section3" class="nav-link text-dark" href="#">pedidos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    
+    <main>  
+        <div id="inicio" class="inicio">
+            <div class="container-sm rr">
+                <div class="crear presup">
+                    <a href="">
+                        <i id="pr" class="fas fa-plus"></i>
+                    </a>
+                    <p>Crear presupuesto</p>
+                </div>
+                <div class="crear pedid">
+                    <a href="">
+                        <i id="ped" class="fas fa-plus"></i>
+                    </a>
+                    <p>Crear pedido</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="presupuesto" class="presupuesto ocultar">
+            <div class="container formulario">
+                <div class="row">
+                    <div class="col">
+                        <div class="shadow-lg p-3 mb-5 mt-4 rounded">       
+                            <form class="row g-3 needs-validation" novalidate>
+                                <div class="row-md-4">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre_pr" placeholder="Su nombre" required>
+                                    <!-- Mensajes para validación   -->
+                                    <div class="valid-feedback">¡Campo válido!</div>
+                                    <div class="invalid-feedback">Debe completar los datos.</div>
+                                </div>
+                                <div class="row-md-4">
+                                    <label for="kilos" class="form-label">Kilos:</label>
+                                    <input type="text" class="form-control" id="kilos_pr" placeholder="1.5" required>
+                                    <!-- Mensajes para validación   -->
+                                    <div class="valid-feedback">¡Campo válido!</div>
+                                    <div class="invalid-feedback">Debe completar los datos.</div>
+                                </div>
+                                <div class="row-md-3">
+                                    <label for="producto" class="form-label">Producto a presupuestar: </label>
+                                    <select class="form-select" id="producto_pr" required>
+                                        <option selected disabled value="">Seleccione una opción</option>
+                                        <option value="1">Torta cumpleaños</option>
+                                        <option value="2">Pasta frola</option>
+                                        <option value="3">Postres</option>
+                                        <option value="4">Tarta de coco</option>
+                                        <option value="5">Tarta de fruta</option>
+                                        <option value="6">Lemon pie</option>
+                                    </select>
+                                    <!-- Mensajes para validación   -->
+                                    <div class="valid-feedback">¡Campo válido!</div>
+                                    <div class="invalid-feedback">Debe completar los datos.</div>
+                                </div>
+
+                                <button class="btn btn-info fw-bold" type="submit">Calcular</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="presupuestado p-4">
+                <h3 class="titulo-resultado">Presupuesto</h3>
+                <h5 class="titulo-resul">Estimada Luciana, el precio final por 5kg de Torta de cumpleaños seria de:  $5700</h5>
+
+            </div>
+        </div>
+        <div id="slide" class="boton_e_a ocultar ">
+            <div class="contenedor_b">
+                <h5 class="clientes">Clientes</h5>
+                <label class="switch">
+                    <input id="boton_e_a" class="desactivado" type="checkbox">
+                        <span class="slider"></span>
+                </label>
+                <h5 class="administrador">Administrador</h5>
+            </div>
+        </div>
+        <div id="pedidos" class="pedidos ocultar">
+            <div class="container formulario_pedido">
+                <div class="row">
+                    <div class="col">
+                        <div class="shadow-lg p-3 mb-5 mt-4 rounded">       
+                            <form class="row g-2 needs-validation" novalidate>
+                                <div class="row-md-4">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre_pe" placeholder="Su nombre" required>
+                                    <!-- Mensajes para validación   -->
+                                    <div class="valid-feedback">¡Campo válido!</div>
+                                    <div class="invalid-feedback">Debe completar los datos.</div>
+                                </div>
+                                <div class="row-md-4">
+                                    <label for="kilos" class="form-label">Kilos:</label>
+                                    <input type="text" class="form-control" id="kilos_pe" placeholder="1.5" required>
+                                    <!-- Mensajes para validación   -->
+                                    <div class="valid-feedback">¡Campo válido!</div>
+                                    <div class="invalid-feedback">Debe completar los datos.</div>
+                                </div>
+                                <div class="row-md-3">
+                                    <label for="producto" class="form-label">Producto: </label>
+                                    <select class="form-select" id="producto_pe" required>
+                                        <option selected disabled value="">Seleccione una opción</option>
+                                        <option value="torta cumpleaños">Torta cumpleaños</option>
+                                        <option value="pasta frola">Pasta frola</option>
+                                        <option value="postres">Postres</option>
+                                        <option value="tarta de coco">Tarta de coco</option>
+                                        <option value="tarta de fruta">Tarta de fruta</option>
+                                        <option value="lemon pie">Lemon pie</option>
+                                        <option value="otros">Otros</option>
+                                    </select>
+                                    <!-- Mensajes para validación   -->
+                                    <div class="valid-feedback">¡Campo válido!</div>
+                                    <div class="invalid-feedback">Debe completar los datos.</div>
+                                </div>
+                                <div class="row-md-4">
+                                    <label for="fecha">Fecha:</label>
+                                    <input type="date" class="form-control" id="fecha_pe" placeholder="Fecha" required>
+                                    <div class="valid-feedback">¡Campo válido!</div>
+                                    <div class="invalid-feedback">Debe completar los datos.</div>
+                                </div>
+                                <div class="row-md-4">
+                                    <div class="form-group">
+                                        <label for="nota">Notas:</label>
+                                        <textarea class="form-control" id="nota_pe" placeholder="Forrada de violeta con detalles en rosa..." rows="5"></textarea>
+                                        <div class="valid-feedback">¡Campo válido!</div>
+                                    </div>
+                                </div>
+                                
+
+                                <button class="btn btn-info fw-bold" type="submit">Encargar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tabla" class="manager ocultar">
+            <h1 class="title_pedidos">Pedidos</h1>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Kilos</th>
+                            <th scope="col">Notas</th>
+                            <th scope="col">Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Torta de cumpleaños</td>
+                            <td>1.5</td>
+                            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit doloremque consequatur rerum facilis impedit obcaecati ipsum eligendi accusamus provident quae voluptas dolor cupiditate, incidunt reprehenderit numquam perferendis illum. Asperiores laborum pariatur fugit nostrum nesciunt delectus perferendis laboriosam, sunt distinctio placeat.</td>
+                            <td>17/01/2022</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <script src="pantallas.js"></script>
+    <script src="index.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>      
+    (function () {
+      'use strict'
+      // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
+      var forms = document.querySelectorAll('.needs-validation')
+      //Recorremos los forms y evitamos en envío sin validacion
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {            
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+    </script>
+
+    <!-- Script-Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+</html>

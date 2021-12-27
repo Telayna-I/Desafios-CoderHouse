@@ -1,0 +1,294 @@
+*{
+    margin:0 ;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+  font-family: 'IBM Plex Sans', sans-serif;
+  background-image: url(/Proyecto-Final/fondo.png);
+  font-style: normal;
+  padding: 4.375em 0px 0px 0px;
+}
+
+.navbar-brand{
+  font-family: 'Dancing Script', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+}
+
+.texto-logo{
+  padding-left: 0.5em ;
+  font-weight:bolder;
+}
+
+/* Pantalla Inicio */
+
+.rr{
+  display: flex;
+  text-align: center;
+  width: 40rem;
+  height: 25rem;
+  margin-top: 6.5rem;
+}
+
+.fa-plus{
+  font-size: 9em;
+  color: rgb(63, 62, 62);
+  transition: 0.3s;
+}
+
+.fa-plus:hover{
+  filter: brightness(1.5);
+  transform: scale(1.1, 1.1);
+}
+
+.crear{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width:20rem ;
+  height: 25rem;
+  font-family: 'Roboto', sans-serif;
+  /* font-weight: bold; */
+}
+
+
+.pedid{
+  background-color: #f9a59a;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.presup{
+  background-color: #95fab9;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.crear p{
+  padding-top: 1rem;
+}
+
+
+/* Hasta aca!  */
+
+/* Pantalla presupuesto */
+
+.presupuesto{
+  display: flex;
+  height: 23.5rem;
+  width:80% ;
+  margin: auto;
+  margin-top: 4rem;
+  background: rgba( 255, 255, 255, 0.3 );
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur( 3.5px );
+  -webkit-backdrop-filter: blur( 3.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
+
+.formulario{
+  width: 50%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.btn-info{
+  background-color: #4BFABF;
+}
+.btn-info:hover{
+  background-color: #4BFABF;
+  filter: brightness(1.2);
+}
+
+.presupuestado{
+  background-color: rgba(75, 250, 191, 0.6);
+  width: 50%;
+  height: 88%;
+  margin: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 10px;
+}
+
+.titulo-resultado{
+  text-align: center;
+}
+.titulo-resul{
+  text-align: justify;
+  background-color:#4BFABF;
+  margin-top:4rem ;
+}
+/* Hasta aca */
+.pedidos{
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.formulario_pedido{
+  width: 50%;
+  margin: auto;
+  margin-top: 5rem;
+}
+
+
+.contenedor_b{
+  display: flex;
+  position: absolute;
+  left: 45%;
+  top: 20%;
+  transform: translate(-25%, -25%);
+  text-align: center;
+  background-color: red;
+  padding: 10px 0 10px 0;
+  background: rgba( 255, 255, 255, 0.3 );
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur( 3.5px );
+  -webkit-backdrop-filter: blur( 3.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.contenedor_c{
+  display: flex;
+  position: absolute;
+  left: 43%;
+  top: -23%;
+  transform: translate(-25%, -25%);
+  text-align: center;
+  padding: 10px 0 10px 0;
+  background: rgba( 255, 255, 255, 0.90 );
+  box-shadow: 0 8px 10px 0 #ccc;
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.clientes{
+  padding-right: 0.7rem;
+  padding-left: 0.7rem;
+  z-index: 1;
+}
+
+.administrador{
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  z-index: 1;
+}
+
+.switch{
+  position: relative;
+  display: inline-block;
+  width: 3.4375rem;
+  height: 1.875rem;
+}
+
+.slider{
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FCC8BC;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.switch input{
+  display: none;
+}
+
+.slider::before{
+  position: absolute;
+  content: "";
+  height: 1.5625rem;
+  width: 1.5625rem;
+  left: 5px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+input:checked + .slider{
+  background-color: #4BFABF;
+}
+
+input:checked + .slider::before{
+  transform: translateX(22px);
+}
+
+.manager{
+  /* display: flex; */
+  background: rgba( 255, 255, 255, 0.65 );
+  box-shadow: 0 8px 10px 0 #ccc;
+  backdrop-filter: blur( 20px );
+  -webkit-backdrop-filter: blur( 20px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  width: 70%;
+  margin: auto;
+  margin-top: 8rem;
+}
+
+.manager h1{
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  margin: 1rem;
+
+}
+
+
+
+header {
+    background-color: #4BFABF;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 1px 10px black; }
+    header .nav-propia .container-fluid .menu li {
+      list-style-type: none; }
+      header .nav-propia .container-fluid .menu li .nav-link {
+        position: relative;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: white;
+        padding: 10px; }
+      header .nav-propia .container-fluid .menu li .nav-link::after {
+        content: "";
+        background-color: black;
+        position: absolute;
+        left: 0;
+        top: calc(100% - 10px);
+        width: 100%;
+        height: 4px;
+        border-radius: 3px;
+        opacity: 0;
+        transition: opacity 0.3s; }
+      header .nav-propia .container-fluid .menu li .nav-link.selected::after {
+        opacity: 0.8; }
+      header .nav-propia .container-fluid .menu li .nav-link:hover::after {
+        opacity: 0.8; }
+      header .nav-propia .container-fluid .menu li .nav-link:link {
+        text-decoration: none; }
+      header .nav-propia .container-fluid .menu li .nav-link:visited {
+        text-decoration: none; }
+      header .nav-propia .container-fluid .menu li .nav-link:active {
+        text-decoration: none; }
+  
+  @media only screen and (max-width: 990px) {
+    header .nav-propia .container-fluid .menu li .nav-link::after {
+      background-color: transparent; }
+    header .nav-propia .container-fluid .menu li .nav-link:hover {
+      filter: brightness(0.5); } }
+
+
+.ocultar{
+  display: none;
+}
