@@ -22,6 +22,8 @@
     <title>La Repostera</title>
 </head>
 <body>
+
+    <!--Navbar  -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light nav-propia">
             <div class="container-fluid">
@@ -52,7 +54,8 @@
     </header>
 
     
-    <main>  
+    <main>
+        <!-- cuadro verde y rosa que da a elegir que se va a hacer -->
         <div id="inicio" class="inicio">
             <div class="container-sm rr">
                 <div class="crear presup">
@@ -70,7 +73,7 @@
             </div>
         </div>
 
-
+            <!-- pantalla de presupuesto -->
         <div id="presupuesto" class="presupuesto ocultar">
             <div class="container formulario">
                 <div class="row">
@@ -121,6 +124,8 @@
 
             </div>
         </div>
+
+                    <!-- boton para pasar de clientes a administrador -->
         <div id="slide" class="boton_e_a ocultar ">
             <div class="contenedor_b">
                 <h5 class="clientes">Clientes</h5>
@@ -131,6 +136,8 @@
                 <h5 class="administrador">Administrador</h5>
             </div>
         </div>
+
+        <!-- pantalla de pedidos del lado del cliente -->
         <div id="pedidos" class="pedidos ocultar">
             <div class="container formulario_pedido">
                 <div class="row">
@@ -154,7 +161,6 @@
                                         <option value="4">Tarta de coco</option>
                                         <option value="5">Tarta de fruta</option>
                                         <option value="6">Lemon pie</option>
-                                        <option value="7">Otros</option>
                                     </select>
                                     <!-- Mensajes para validación   -->
                                     <div class="valid-feedback">¡Campo válido!</div>
@@ -198,6 +204,7 @@
             </div>
         </div>
 
+        <!-- pantalla de pedidos (tabla) del lado del administrador -->
         <div id="tabla" class="manager ocultar">
             <h1 class="title_pedidos">Pedidos</h1>
             <div class="table-responsive">
@@ -213,15 +220,8 @@
                             <th scope="col">Accion</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Mark</td>
-                            <td>2932-534436</td>
-                            <td>Torta de cumpleaños</td>
-                            <td>1.5</td>
-                            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit doloremque consequatur rerum facilis impedit obcaecati ipsum eligendi accusamus provident quae voluptas dolor cupiditate, incidunt reprehenderit numquam perferendis illum. Asperiores laborum pariatur fugit nostrum nesciunt delectus perferendis laboriosam, sunt distinctio placeat.</td>
-                            <td>17/01/2022</td>
-                        </tr>
+                    <tbody id="tablaPedidos">
+
                     </tbody>
                 </table>
             </div>
@@ -231,8 +231,6 @@
         
 
     </main>
-
-
 
 
 
