@@ -107,16 +107,17 @@
                                     <div class="invalid-feedback">Debe completar los datos.</div>
                                 </div>
 
-                                <button class="btn btn-info fw-bold" type="submit">Calcular</button>
+                                <button id="btn_calcular" class="btn btn-info fw-bold" type="submit">Calcular</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="presupuestado p-4">
-                <h3 class="titulo-resultado">Presupuesto</h3>
-                <h5 class="titulo-resul">Estimada Luciana, el precio final por 5kg de Torta de cumpleaños seria de:  $5700</h5>
+            <div id = "aca"class="presupuestado p-4">
+                <h2 class="titulo-resultado">Presupuesto</h2>
+                <h3 id="titulo-resul" class="titulo-resul"></h3>
+                <h5 id="precio_pro" class="precio_pro"></h5>
 
             </div>
         </div>
@@ -143,6 +144,22 @@
                                     <div class="valid-feedback">¡Campo válido!</div>
                                     <div class="invalid-feedback">Debe completar los datos.</div>
                                 </div>
+                                <div class="row-md-3">
+                                    <label for="producto" class="form-label">Producto: </label>
+                                    <select class="form-select" id="producto_pe" required>
+                                        <option selected disabled value="">Seleccione una opción</option>
+                                        <option value="1">Torta cumpleaños</option>
+                                        <option value="2">Pasta frola</option>
+                                        <option value="3">Postres</option>
+                                        <option value="4">Tarta de coco</option>
+                                        <option value="5">Tarta de fruta</option>
+                                        <option value="6">Lemon pie</option>
+                                        <option value="7">Otros</option>
+                                    </select>
+                                    <!-- Mensajes para validación   -->
+                                    <div class="valid-feedback">¡Campo válido!</div>
+                                    <div class="invalid-feedback">Debe completar los datos.</div>
+                                </div>
                                 <div class="row-md-4">
                                     <label for="kilos" class="form-label">Kilos:</label>
                                     <input type="text" class="form-control" id="kilos_pe" placeholder="1.5" required>
@@ -150,22 +167,14 @@
                                     <div class="valid-feedback">¡Campo válido!</div>
                                     <div class="invalid-feedback">Debe completar los datos.</div>
                                 </div>
-                                <div class="row-md-3">
-                                    <label for="producto" class="form-label">Producto: </label>
-                                    <select class="form-select" id="producto_pe" required>
-                                        <option selected disabled value="">Seleccione una opción</option>
-                                        <option value="torta cumpleaños">Torta cumpleaños</option>
-                                        <option value="pasta frola">Pasta frola</option>
-                                        <option value="postres">Postres</option>
-                                        <option value="tarta de coco">Tarta de coco</option>
-                                        <option value="tarta de fruta">Tarta de fruta</option>
-                                        <option value="lemon pie">Lemon pie</option>
-                                        <option value="otros">Otros</option>
-                                    </select>
+                                <div class="row-md-4">
+                                    <label for="telefono" class="form-label">Telefono:</label>
+                                    <input type="text" class="form-control" id="telefono_pe" placeholder="2932-559977" required>
                                     <!-- Mensajes para validación   -->
                                     <div class="valid-feedback">¡Campo válido!</div>
                                     <div class="invalid-feedback">Debe completar los datos.</div>
                                 </div>
+                                
                                 <div class="row-md-4">
                                     <label for="fecha">Fecha:</label>
                                     <input type="date" class="form-control" id="fecha_pe" placeholder="Fecha" required>
@@ -181,7 +190,7 @@
                                 </div>
                                 
 
-                                <button class="btn btn-info fw-bold" type="submit">Encargar</button>
+                                <button id="btn_encargar" class="btn btn-info fw-bold" type="submit">Encargar</button>
                             </form>
                         </div>
                     </div>
@@ -195,18 +204,19 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
                             <th scope="col">Nombre</th>
+                            <th scope="col">Telefono</th>
                             <th scope="col">Producto</th>
                             <th scope="col">Kilos</th>
                             <th scope="col">Notas</th>
                             <th scope="col">Fecha</th>
+                            <th scope="col">Accion</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">1</th>
                             <td>Mark</td>
+                            <td>2932-534436</td>
                             <td>Torta de cumpleaños</td>
                             <td>1.5</td>
                             <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit doloremque consequatur rerum facilis impedit obcaecati ipsum eligendi accusamus provident quae voluptas dolor cupiditate, incidunt reprehenderit numquam perferendis illum. Asperiores laborum pariatur fugit nostrum nesciunt delectus perferendis laboriosam, sunt distinctio placeat.</td>
@@ -242,25 +252,22 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script>      
-    (function () {
-      'use strict'
-      // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
-      var forms = document.querySelectorAll('.needs-validation')
-      //Recorremos los forms y evitamos en envío sin validacion
-      Array.prototype.slice.call(forms)
-        .forEach(function (form) {
-          form.addEventListener('submit', function (event) {            
-            if (!form.checkValidity()) {
-              event.preventDefault()
-              event.stopPropagation()
-            }
-            form.classList.add('was-validated')
-          }, false)
-        })
-    })()
+        (function () {
+        'use strict'
+        // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
+        var forms = document.querySelectorAll('.needs-validation')
+        //Recorremos los forms y evitamos en envío sin validacion
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+            form.addEventListener('submit', function (event) {            
+                if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            }, false)
+            })
+        })()
     </script>
-
-    <!-- Script-Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
 </html>
