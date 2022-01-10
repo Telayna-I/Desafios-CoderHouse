@@ -68,8 +68,12 @@ body{
 
 .crear p{
   padding-top: 1rem;
+  font-weight: bold;
 }
-
+/* 
+.toast{
+  top: 170px !important;
+} */
 
 /* Hasta aca!  */
 
@@ -297,7 +301,7 @@ header {
       filter: brightness(0.5); } }
 
 .listo{
-  background-color: lightgreen !important;
+  background-color: lightgreen;
 }
 .pointer{
   cursor: pointer;

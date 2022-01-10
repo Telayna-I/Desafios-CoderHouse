@@ -23,10 +23,8 @@ class Presupuesto{
 
     // TOMA LOS DATOS INGRESADOS, HACE LOS CALCULOS ACCEDIENDO AL ARRAY DE PRODUCTOS Y POSTERIORMENTE MUESTRA EN PANTALLA LOS RESULTADOS
     presupuestar(){
-        let precio_pro = document.getElementById("precio_pro");
-        let titulo_resul = document.getElementById("titulo-resul");
-        titulo_resul.innerHTML = `Estimad@ ${this.nombre}`;
-        precio_pro.innerHTML = `El precio final por ${this.peso_requerido} kilos de ${this.nombre_producto} es de $${this.precio_por_kilo * this.peso_requerido}`;
+        $('#titulo-resul').text(`Estimad@ ${this.nombre}`);
+        $('#precio_pro').text(`El precio final por ${this.peso_requerido} kilos de ${this.nombre_producto} es de $${this.precio_por_kilo * this.peso_requerido}`);
     }
 }
 
@@ -54,20 +52,16 @@ class Pedido{
 
 
 // CAPUTRO EVENTOS EN EL BOTON DE PRESUPUESTO, UTILIZO LA FUNCION PRESUPUESTAR Y VACIO EL FORMULARIO
-const btn_calcular = document.getElementById("btn_calcular");
-
-btn_calcular.onclick = (e) =>{
+$('#btn_calcular').on('click', (e) =>{
     e.preventDefault();
     presupuesto();
     nombre_pr.value = "";
     kilos_pr.value ="";
     producto_pr.value ="";
-}
+});
 
 // CAPUTRO EVENTOS EN EL BOTON DE PEDIDOS, UTILIZO LA FUNCION PEDIDOS Y LA FUNCION LISTARPEDIDO PARA IMPRIMIR EN LA TABLA LOS PEDIDOS NUEVOS Y VACIO EL FORMULARIO
-const btn_encargar = document.getElementById("btn_encargar");
-
-btn_encargar.onclick = (e) =>{
+$('#btn_encargar').on('click', (e) => {
     e.preventDefault();
     pedidos();
     listarPedido();
@@ -77,7 +71,16 @@ btn_encargar.onclick = (e) =>{
     telefono_pe.value ="";
     fecha_pe.value ="";
     nota_pe.value ="";
-}
+});
+
+// deje esto aca porque estoy intentando agregar un toast despues de tomar un pedido pero no me sale la notificacion en el lugar que quiero.
+
+// btn_encarga.onclick = () =>{
+//     let myToast = document.querySelector(".toast");
+//     let bsAlert = new bootstrap.Toast(myToast);
+//     bsAlert.show();
+// }
+
 
 // SE DETECTA EL CLICK EN EL BASURERO PARA ELIMINAR DEL LOCAL STORAGE UN PEDIDO 
 deleteClick = (i) =>{
@@ -94,9 +97,9 @@ checkClick = (i) =>{
 
 // CAPTURO LOS DATOS INGRESADOS EN EL FORMULARIO DE PRESUPUESTO, LOS INGRESO COMO UN NUEVO OBJETO Y HAGO USO DE LA FUNCION PRESUPUESTAR
 function presupuesto(){
-    const nombre_pr = document.getElementById("nombre_pr").value;
-    const kilos_pr = parseFloat(document.getElementById("kilos_pr").value);
-    const producto_pr = parseInt(document.getElementById("producto_pr").value);
+    const nombre_pr = $('#nombre_pr').val();
+    const kilos_pr = parseFloat($('#kilos_pr').val());
+    const producto_pr = parseInt($('#producto_pr').val());
     let precio_kilo = elaborados[producto_pr-1];
     precio_kilo = precio_kilo.precio_por_kilo
     let nombre_producto = elaborados[producto_pr-1];
@@ -106,49 +109,46 @@ function presupuesto(){
 }
 // CAPTURO LOS DATOS INGRESADOS EN EL FORMULARIO DE PEDIDOS, LOS INGRESO COMO UN NUEVO OBJETO Y HAGO USO DE LA FUNCION ENCARGAR
 function pedidos(){
-    let nombre_pe = document.getElementById("nombre_pe").value;
-    let telefono_pe = document.getElementById("telefono_pe").value;
-    let producto_pe = document.getElementById("producto_pe").value;
+    let nombre_pe = $('#nombre_pe').val();
+    let telefono_pe = $('#telefono_pe').val();
+    let producto_pe = $('#producto_pe').val();
     let nombre_producto = elaborados[producto_pe-1];
     nombre_producto = nombre_producto.producto;
     let precio_producto = elaborados[producto_pe-1];
     precio_producto = precio_producto.precio_por_kilo;
-    let kilos_pe = parseFloat(document.getElementById("kilos_pe").value);
-    let nota_pe = document.getElementById("nota_pe").value;
-    let fecha_pe = document.getElementById("fecha_pe").value;
+    let kilos_pe = parseFloat($('#kilos_pe').val());
+    let nota_pe = $('#nota_pe').val();
+    let fecha_pe = $('#fecha_pe').val();;
     let status_pe = false;
     let pedido1 = new Pedido(nombre_pe, telefono_pe, nombre_producto, kilos_pe, nota_pe,fecha_pe, precio_producto, status_pe);
     pedido1.encargar();
-    // console.log(encargues);
 }
 
 
 
 // CON LOS DATOS RECOPILADOS DE LOS PEDIDOS CREO UNA NUEVA ROW EN LA TABLA CON LA INFORMACION PERTINENTE.
-tablaPedidos = document.getElementById("tablaPedidos");
+
 
 function listarPedido(){ 
 
-    tablaPedidos.innerHTML = "";
+    $('#tablaPedidos').text('');
     let tr;
-    
-    encargues.forEach((element,i) => {
-        tr = document.createElement('tr');
-        tr.setAttribute("id", i);
-        if(element.status === true)
-            tr.setAttribute("class",'listo');
-
-        tr.innerHTML = `<td>${element.nombre}</td>
-                        <td>${element.telefono}</td>
-                        <td>${element.producto}</td>
-                        <td>${element.kilos}</td>
-                        <td>${element.nota}</td>
-                        <td>${element.fecha}</td>
-                        <td>
-                            <i class="far fa-check-circle pointer" onClick="checkClick(${i})"></i>
-                            <i class="fas fa-trash pointer" onClick="deleteClick(${i})"></i>
-                        </td>`;
-
-        tablaPedidos.appendChild(tr);
-    });
+    encargues.forEach((element,i) =>{
+        tr = $(`<tr></tr>`);
+        tr.attr("id", i);
+        $('#tablaPedidos').append(tr);
+        if(element.status === true){
+            tr.attr("class", 'listo')
+        }
+        $(`#${i}`).append(` <td>${element.nombre}</td>
+                    <td>${element.telefono}</td>
+                    <td>${element.producto}</td>
+                    <td>${element.kilos}</td>
+                    <td>${element.nota}</td>
+                    <td>${element.fecha}</td>
+                    <td>
+                        <i class="far fa-check-circle pointer" onClick="checkClick(${i})"></i>
+                        <i class="fas fa-trash pointer" onClick="deleteClick(${i})"></i>
+                    </td>`);
+    })
 }
