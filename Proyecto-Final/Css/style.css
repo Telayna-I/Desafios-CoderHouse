@@ -34,18 +34,18 @@ body{
   margin-top: 6.5rem;
 }
 
-.fa-plus{
+.fas{
   font-size: 9em;
   color: rgb(63, 62, 62);
   transition: 0.3s;
 }
 
-.fa-plus:hover{
+.fas:hover{
   filter: brightness(1.5);
   transform: scale(1.1, 1.1);
 }
 
-.crear{
+.recuadro{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -66,14 +66,14 @@ body{
   border-radius: 10px 0px 0px 10px;
 }
 
-.crear p{
+.fotos{
+  background-color:#b2e2f2 ;
+}
+
+.recuadro p{
   padding-top: 1rem;
   font-weight: bold;
 }
-/* 
-.toast{
-  top: 170px !important;
-} */
 
 /* Hasta aca!  */
 
@@ -122,6 +122,26 @@ body{
   margin-bottom: 2rem;
 }
 
+/* Estilos a la galeria */
+
+.container-fotos{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.form-select-gal{
+  margin-bottom: 1rem;
+}
+.img-gal{
+  margin: 2rem;
+}
+
+.img-gal img{
+  width: 15rem;
+  height: 13rem;
+}
+
+
 /* Hasta aca */
 .pedidos{
   display: flex;
@@ -133,6 +153,25 @@ body{
   margin: auto;
   margin-top: 5rem;
 }
+
+.boton_e_a{
+  margin: auto;
+}
+
+.toast {
+  display: flex;
+  position: relative;
+  top: 15rem;
+  width: 220px;
+  height: 50px;
+  border-radius: 10px 10px 1px 10px;
+  background-color: #53db4c;
+  margin-top:1rem ;
+  margin-right: 1rem;
+  align-self: flex-end;
+}
+
+
 
 
 .contenedor_b{
@@ -311,4 +350,12 @@ header {
 }
 .ocultar{
   display: none;
+}
+
+.text-toast{
+  font-family: sans-serif;
+  font-size: 0.85rem;
+  padding:15px 10px ;
+  margin: auto;
+  
 }

@@ -45,7 +45,10 @@
                             <a id="section2" class="nav-link text-dark" href="#">Presupuesto</a>
                         </li>
                         <li id="se_borra3">
-                            <a id="section3" class="nav-link text-dark" href="#">pedidos</a>
+                            <a id="section3" class="nav-link text-dark" href="#">Galeria</a>
+                        </li>
+                        <li id="se_borra4">
+                            <a id="section4" class="nav-link text-dark" href="#">pedidos</a>
                         </li>
                     </ul>
                 </div>
@@ -54,25 +57,30 @@
     </header>
     <main>
         <!-- cuadro verde y rosa que da a elegir que se va a hacer -->
-        <div id="inicio" class="inicio">
+        <section id="inicio" class="inicio">
             <div class="container-sm rr">
-                <div class="crear presup">
+                <div class="recuadro presup">
                     <a href="">
                         <i id="pr" class="fas fa-plus"></i>
                     </a>
                     <p>Crear presupuesto</p>
                 </div>
-                <div class="crear pedid">
+                <div class="recuadro fotos">
+                    <a href="">
+                        <i id="gl" class="fas fa-image"></i>
+                    </a>
+                    <p>Ver modelos</p>
+                </div>
+                <div class="recuadro pedid">
                     <a href="">
                         <i id="ped" class="fas fa-plus"></i>
                     </a>
                     <p>Crear pedido</p>
                 </div>
             </div>
-        </div>
-
+        </section>
             <!-- pantalla de presupuesto -->
-        <div id="presupuesto" class="presupuesto ocultar">
+        <section id="presupuesto" class="presupuesto ocultar">
             <div class="container formulario">
                 <div class="row">
                     <div class="col">
@@ -121,8 +129,20 @@
                 <h5 id="precio_pro" class="precio_pro"></h5>
 
             </div>
-        </div>
+        </section>
 
+        <section id="galeria" class="galeria manager ocultar">
+            <h1 class="title_pedidos">Galeria</h1>
+            <select class="form-select form-select-gal" id="modelo" required>
+                <option selected disabled value="">Seleccione el modelo de torta que desea ver</option>
+                <option value="1">Tortas de comunion</option>
+                <option value="2">Tortas infantiles</option>
+                <option value="3">Tortas de casamiento</option>
+            </select>
+            <div id= "container-fotos" class="container-fotos">
+                        
+            </div>
+        </section>
                     <!-- boton para pasar de clientes a administrador -->
         <div id="slide" class="boton_e_a ocultar ">
             <div class="contenedor_b">
@@ -136,26 +156,17 @@
         </div>
 
         <!-- pantalla de pedidos del lado del cliente -->
-        <div aria-live="polite" aria-atomic="true" class="position-relative">
-            <div class="toast-container position-absolute top-0 end-0">
-                <div class="toast align-items-center text-white bg-primary border-0 " role="alert" aria-live="assertive" aria-atomic="true">
-                    <div class="toast-body">
-                            <div class="d-flex">
-                            👌 El pedido quedó registrado con exito.
-                        </div>
-                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-                    </div>
-                </div>
+        <section id="pedidos" class="pedidos ocultar">
+            <div id="toast" style="display: none;" class="toast">
+                <p class="text-toast">👌 El pedido se genero con exito</p>
             </div>
-        </div>
-        <div id="pedidos" class="pedidos ocultar">
             <div class="container formulario_pedido">
                 <div class="row">
                     <div class="col">
                         <div class="shadow-lg p-3 mb-5 mt-4 rounded">       
                             <form class="row g-2 needs-validation" novalidate>
                                 <div class="row-md-4">
-                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <label for="nombre" class="form-label">Nombre:</label>
                                     <input type="text" class="form-control" id="nombre_pe" placeholder="Su nombre" required>
                                     <!-- Mensajes para validación   -->
                                     <div class="valid-feedback">¡Campo válido!</div>
@@ -190,6 +201,13 @@
                                     <div class="valid-feedback">¡Campo válido!</div>
                                     <div class="invalid-feedback">Debe completar los datos.</div>
                                 </div>
+                                <div class="row-md-4">
+                                    <label for="senia" class="form-label">Seña:</label>
+                                    <input type="text" class="form-control" id="senia" placeholder="$500" required>
+                                    <!-- Mensajes para validación   -->
+                                    <div class="valid-feedback">¡Campo válido!</div>
+                                    <div class="invalid-feedback">Debe completar los datos.</div>
+                                </div>
                                 
                                 <div class="row-md-4">
                                     <label for="fecha">Fecha:</label>
@@ -200,7 +218,7 @@
                                 <div class="row-md-4">
                                     <div class="form-group">
                                         <label for="nota">Notas:</label>
-                                        <textarea class="form-control" id="nota_pe" placeholder="Forrada de violeta con detalles en rosa..." rows="5"></textarea>
+                                        <textarea class="form-control" id="nota_pe" placeholder="Forrada de violeta con detalles en rosa..." rows="3"></textarea>
                                         <div class="valid-feedback">¡Campo válido!</div>
                                     </div>
                                 </div>
@@ -212,10 +230,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- pantalla de pedidos (tabla) del lado del administrador -->
-        <div id="tabla" class="manager ocultar">
+        <section id="tabla" class="manager ocultar">
             <h1 class="title_pedidos">Pedidos</h1>
             <div class="table-responsive">
                 <table class="table table-bordered">
@@ -227,6 +245,8 @@
                             <th scope="col">Kilos</th>
                             <th scope="col">Notas</th>
                             <th scope="col">Fecha</th>
+                            <th scope="col">Seña</th>
+                            <th scope="col">Total a pagar</th>
                             <th scope="col">Accion</th>
                         </tr>
                     </thead>
@@ -235,7 +255,7 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </section>
 
 
         
@@ -257,25 +277,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="Js/pantallas.js"></script>
     <script src="Js/index.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script>      
-        (function () {
-        'use strict'
-        // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
-        var forms = document.querySelectorAll('.needs-validation')
-        //Recorremos los forms y evitamos en envío sin validacion
-        Array.prototype.slice.call(forms)
-            .forEach(function (form) {
-            form.addEventListener('submit', function (event) {            
-                if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-                }
-                form.classList.add('was-validated')
-            }, false)
-            })
-        })()
-    </script>
 </body>
 </html>
