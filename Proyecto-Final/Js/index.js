@@ -115,6 +115,7 @@ $('#btn_calcular').on('click', (e) =>{
         alertaForm();
     }else{
         presupuesto();
+        $('#toast').fadeIn('slow').delay(2000).fadeOut('slow');
         nombre_pr.value = "";
         kilos_pr.value ="";
         producto_pr.value ="";
