@@ -38,6 +38,8 @@ const casamiento = [
     {image: '<img src="Assets/casamiento8.jfif" alt="torta-casamiento">'},
 ]
 
+
+// EN FUNCION DE LA CATEGORIA SELECCIONADA MUESTRA LAS IMAGENES PERTINENTES
 function listarFotos(modelo,categoria){
     vaciarGaleria();
     let div;
@@ -55,6 +57,7 @@ function listarFotos(modelo,categoria){
     })
 }
 
+// SI CAMBIO EL VALOR DEL SELECT A UN NUEVO MODELO ESTA FUNCION LO QUE HACE ES LIMPIAR LA GALERIA DE IMAGENES Y VOLVER A DEJARLA LISTA PARA LA NUEVA SELECCION.
 function vaciarGaleria(){
     $('#container-fotos').remove();
     let containerFotos = $('<div></div>')
@@ -123,6 +126,7 @@ $('#btn_calcular').on('click', (e) =>{
     }
 });
 
+// DETECTA EL CAMBIO DE VALOR DEL SELECT Y MUESTRA LAS IMAGENES SEGUN EL MODELO SELECCIONADO
 $('#modelo').on('change', function () {
     if ($('#modelo').val() == 1){
         let categoria = "comunion";
@@ -157,7 +161,7 @@ function toast(){
         showConfirmButton: false,
         timer: 3000,
         timerProgressBar: true,
-        width: '28%',
+        width: '30%',
         didOpen: (toast) => {
             toast.addEventListener('mouseenter', Swal.stopTimer)
             toast.addEventListener('mouseleave', Swal.resumeTimer)
